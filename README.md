@@ -58,8 +58,8 @@ storytelling-grandma-ai/
 ### 1️⃣ Clone & Setup
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/storytelling-grandma-ai.git
-cd storytelling-grandma-ai
+git clone https://github.com/YOUR_USERNAME/conversational-ai.git
+cd conversational-grandma-ai
 
 # Create virtual environment
 python3 -m venv venv
