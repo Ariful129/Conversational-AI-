@@ -1,6 +1,6 @@
 # 🌸 conversational  AI
 
-> An intelligent conversational AI assistant built with **Rasa**, designed to tell personalized stories to children. The bot remembers the child's name, adapts stories based on preferences, and integrates with microservices for dynamic content.
+> An intelligent conversational AI assistant built with **Rasa**. 
 
 [![Python](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![Rasa](https://img.shields.io/badge/rasa-3.1+-purple.svg)](https://rasa.com/)
@@ -12,13 +12,13 @@
 
 ```
 ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
-│   Rasa Core     │◄──►│ Story Service   │◄──►│ Content Database│
+│   Rasa Core     │◄──►│  Service-1      │◄──►│ Content Database│
 │ (Conversation)  │    │ (Port 5001)     │    │                 │
 └─────────────────┘    └─────────────────┘    └─────────────────┘
          │                        │
          ▼                        ▼
 ┌─────────────────┐    ┌─────────────────┐
-│ Action Server   │◄──►│Interaction Svc  │
+│ Action Server   │◄──►│ Service-2       │
 │ (Custom Logic)  │    │ (Port 5000)     │
 └─────────────────┘    └─────────────────┘
 ```
@@ -59,7 +59,7 @@ storytelling-grandma-ai/
 
 ```bash
 git clone https://github.com/YOUR_USERNAME/conversational-ai.git
-cd conversational-grandma-ai
+cd conversational-ai
 
 # Create virtual environment
 python3 -m venv venv
