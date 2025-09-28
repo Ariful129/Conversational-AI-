@@ -1,0 +1,173 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hi grandma
+    - hello
+    - hey there
+    - good morning grandma
+    - namaskar dadi
+    - assalamu alaikum
+
+- intent: goodbye
+  examples: |
+    - bye grandma
+    - goodbye
+    - goodnight
+    - see you later
+
+- intent: request_story
+  examples: |
+    - tell me a story
+    - can you tell me a story
+    - I want a story
+    - golpo bolo
+    - story please
+
+- intent: story_preference
+  examples: |
+    - I want an [adventure](story_type) story
+    - tell me a [fairy_tale](story_type)
+    - I like [animal](story_type) stories
+    - [space](story_type) story please
+    - I want to hear about [princess](story_type)
+    - I want a [dragon](story_type) story
+    - can you tell a [magic](story_type) story
+
+- intent: story_feedback_positive
+  examples: |
+    - that's cool
+    - I like this story
+    - more please
+    - I enjoy this
+    - keep going
+    - this story is good
+    - amazing
+    - wonderful
+
+- intent: continue_story
+  examples: |
+    - what happens next
+    - continue
+    - go on
+    - tell me more
+    - keep going
+    - continue please
+
+- intent: story_choice
+  examples: |
+    - the hero should go left
+    - I choose the magic sword
+    - help the dragon
+    - climb the mountain
+
+- intent: tell_name
+  examples: |
+    - my name is [Alex](child_name)
+    - I'm [Sarah](child_name)
+    - call me [Tommy](child_name)
+    - [Emma](child_name)
+    - it's [Arif](child_name)
+    - please call me [Ayesha](child_name)
+
+- intent: want_different_story
+  examples: |
+    - I don't like this story
+    - can we have a different story
+    - I want another story
+    - onno golpo bolo
+    - different story please
+
+- intent: express_emotion
+  examples: |
+    - I'm [scared](emotion)
+    - I'm [excited](emotion)
+    - I feel [happy](emotion)
+    - I'm [curious](emotion)
+    - that makes me [sad](emotion)
+    - I feel [amazed](emotion)
+    - I'm [worried](emotion)
+
+- intent: ask_question
+  examples: |
+    - what is that
+    - why did that happen
+    - how did they do that
+
+# Synonyms
+- synonym: adventure
+  examples: |
+    - adventure
+    - exploring
+    - journey
+
+- synonym: fairy_tale
+  examples: |
+    - fairy tale
+    - magic story
+    - pori
+
+- synonym: animal
+  examples: |
+    - animal
+    - creatures
+    - janwar
+
+- synonym: space
+  examples: |
+    - space
+    - stars
+    - universe
+
+- synonym: dragon
+  examples: |
+    - dragon
+    - drake
+
+- synonym: magic
+  examples: |
+    - magic
+    - spell
+
+- synonym: princess
+  examples: |
+    - princess
+    - royal
+
+- synonym: scared
+  examples: |
+    - scared
+    - afraid
+    - bhoy
+
+- synonym: excited
+  examples: |
+    - excited
+    - thrilled
+
+- synonym: happy
+  examples: |
+    - happy
+    - cheerful
+
+- synonym: sad
+  examples: |
+    - sad
+    - unhappy
+
+- synonym: curious
+  examples: |
+    - curious
+    - interested
+
+- synonym: amazed
+  examples: |
+    - amazed
+    - wow
+    - astonished
+
+- synonym: worried
+  examples: |
+    - worried
+    - nervous

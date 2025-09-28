@@ -1,0 +1,13 @@
+{
+  "0": "ask_question",
+  "1": "continue_story",
+  "2": "express_emotion",
+  "3": "goodbye",
+  "4": "greet",
+  "5": "request_story",
+  "6": "story_choice",
+  "7": "story_feedback_positive",
+  "8": "story_preference",
+  "9": "tell_name",
+  "10": "want_different_story"
+}

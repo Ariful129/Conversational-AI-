@@ -1,0 +1,137 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - request_story
+  - story_preference
+  - story_feedback_positive
+  - story_feedback_continue
+  - express_emotion
+  - want_different_story
+  - continue_story
+  - story_choice
+  - tell_name
+  - ask_question
+
+entities:
+  - story_type
+  - emotion
+  - character
+  - child_name
+
+slots:
+  child_name:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: child_name
+
+  last_node_id:
+    type: text
+    influence_conversation: false
+    mappings: []
+
+  story_type:
+    type: categorical
+    values:
+      - adventure
+      - fairy_tale
+      - animal
+      - space
+      - magic
+      - princess
+      - dragon
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: story_type
+
+  current_story_id:
+    type: text
+    influence_conversation: false
+    mappings: []
+
+  current_story_type:
+    type: text
+    influence_conversation: false
+    mappings: []
+
+  current_emotion:
+    type: categorical
+    values:
+      - happy
+      - excited
+      - scared
+      - sad
+      - curious
+      - worried
+      - amazed
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: emotion
+
+  story_progress:
+    type: categorical
+    values:
+      - beginning
+      - middle
+      - end
+      - complete
+    influence_conversation: false
+    mappings: []
+
+responses:
+  utter_greet:
+    - text: "Oh hello there, my dear little one! It's Grandma here. What's your name, sweetheart?"
+    - text: "Well hello, precious! Grandma is so happy to see you today. What should I call you, my dear?"
+    - text: "Hello my darling! Grandma has been waiting for you. What's your beautiful name?"
+
+  utter_ask_story_preference:
+    - text: "What kind of story would you like to hear today, {child_name}? Adventures, fairy tales, animals, or space journeys?"
+    - text: "Oh {child_name}, Grandma has so many stories! Adventure, magic, animals, or space? Which one do you like?"
+    - text: "Let's see, {child_name}... Adventure, magical fairy tale, animals, or exploring stars?"
+
+  utter_praise_participation:
+    - text: "What a wonderful idea, {child_name}! You're so creative!"
+    - text: "Oh my, you're such a smart little one! That's a fantastic thought!"
+    - text: "Grandma loves how you think, {child_name}! That's perfect!"
+    - text: "What an amazing imagination you have, {child_name}!"
+
+  utter_goodbye:
+    - text: "Sweet dreams, my dear {child_name}. Grandma loves you so much!"
+    - text: "Goodbye for now, precious {child_name}. Come back soon for more stories!"
+    - text: "Until next time, sweetheart {child_name}. Pleasant dreams!"
+
+  utter_ask_different_story:
+    - text: "Of course, sweetheart! What kind of story would you prefer instead?"
+    - text: "No problem, {child_name}! Grandma has many other wonderful stories. What interests you?"
+    - text: "Absolutely, dear! Let's find a story that's perfect for you. What would you like?"
+
+  utter_story_feedback_positive:
+    - text: "I'm so happy you enjoyed that, {child_name}!"
+    - text: "Your smile makes Grandma's heart so warm, {child_name}!"
+    - text: "What a joy it is to share stories with you, dear!"
+
+  utter_ask_continue:
+    - text: "Would you like to hear more of this story, {child_name}?"
+    - text: "Should we continue our adventure, sweetheart?"
+    - text: "What happens next? Would you like Grandma to continue?"
+
+actions:
+  - action_tell_story
+  - action_continue_story
+  - action_remember_child
+  - action_adapt_to_emotion
+  - action_get_session_history
+  - action_generate_with_ai_model
+  - action_update_user_preferences
+  - action_default_fallback
+  - action_remember_preference  # already here, ensure spelling matches
+
+
+session_config:
+  session_expiration_time: 1800
+  carry_over_slots_to_new_session: true

@@ -1,0 +1,15 @@
+# endpoints.yml
+
+action_endpoint:
+  url: "http://localhost:5055/webhook"
+
+tracker_store:
+  type: InMemoryTrackerStore
+
+# Disable event broker for local testing
+# event_broker:
+#   type: "pika"
+#   url: "localhost"
+#   username: "guest"
+#   password: "guest"
+#   queue: "rasa_events"

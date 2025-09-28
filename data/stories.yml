@@ -1,0 +1,73 @@
+version: "3.1"
+
+stories:
+
+- story: complete story session (praise) - new child
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: tell_name
+  - action: action_remember_child
+  - intent: request_story
+  - action: utter_ask_story_preference
+  - intent: story_preference
+  - action: action_tell_story
+  - intent: story_feedback_positive
+  - action: utter_praise_participation
+  - action: action_listen
+
+- story: complete story session (praise) - known child
+  steps:
+  - intent: request_story
+  - action: utter_ask_story_preference
+  - intent: story_preference
+  - action: action_tell_story
+  - intent: story_feedback_positive
+  - action: utter_praise_participation
+  - action: action_listen
+
+- story: complete story session (ask continue) - new child
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: tell_name
+  - action: action_remember_child
+  - intent: request_story
+  - action: utter_ask_story_preference
+  - intent: story_preference
+  - action: action_tell_story
+  - intent: story_feedback_continue
+  - action: utter_ask_continue
+  - action: action_listen
+
+- story: complete story session (ask continue) - known child
+  steps:
+  - intent: request_story
+  - action: utter_ask_story_preference
+  - intent: story_preference
+  - action: action_tell_story
+  - intent: story_feedback_continue
+  - action: utter_ask_continue
+  - action: action_listen
+
+- story: multi-turn story continuation (praise)
+  steps:
+  - action: action_tell_story
+  - intent: continue_story
+  - action: action_continue_story
+  - intent: continue_story
+  - action: action_continue_story
+  - intent: story_feedback_positive
+  - action: utter_praise_participation
+  - action: action_listen
+
+- story: multi-turn story continuation (ask continue)
+  steps:
+  - action: action_tell_story
+  - intent: continue_story
+  - action: action_continue_story
+  - intent: continue_story
+  - action: action_continue_story
+  - intent: story_feedback_continue
+  - action: utter_ask_continue
+  - action: action_listen

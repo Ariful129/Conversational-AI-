@@ -1,0 +1,60 @@
+version: "3.1"
+
+rules:
+
+# Greet user (no slot logic here, just say hello)
+- rule: Always greet when user greets
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+# Say goodbye when user says goodbye
+- rule: Always say goodbye when user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+# Handle story preference immediately
+- rule: Handle story preference
+  steps:
+  - intent: story_preference
+  - action: action_tell_story
+
+# Continue story when requested
+- rule: Continue story when asked
+  steps:
+  - intent: continue_story
+  - action: action_continue_story
+
+# Ask for a different story
+- rule: Ask for different story
+  steps:
+  - intent: want_different_story
+  - action: utter_ask_different_story
+
+# Handle positive feedback
+- rule: Handle positive feedback
+  steps:
+  - intent: story_feedback_positive
+  - action: utter_praise_participation
+
+# Handle feedback asking story continuation
+- rule: Handle feedback asking continue
+  steps:
+  - intent: story_feedback_continue
+  - action: utter_ask_continue
+
+# Capture child's name when introduced (only if not already set)
+- rule: Remember child name
+  condition:
+  - slot_was_set:
+      - child_name: null
+  steps:
+  - intent: tell_name
+  - action: action_remember_child
+
+# Adapt story based on emotion
+- rule: Adapt story based on child's emotion
+  steps:
+  - intent: express_emotion
+  - action: action_adapt_to_emotion
