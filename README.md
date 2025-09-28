@@ -217,7 +217,5 @@ rasa test nlu --cross-validation
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 
-## ⭐ Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=YOUR_USERNAME/storytelling-grandma-ai&type=Date)](https://star-history.com/#YOUR_USERNAME/storytelling-grandma-ai&Date)
 
