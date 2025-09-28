@@ -26,7 +26,7 @@
 ## 🗂️ Project Structure
 
 ```
-storytelling-grandma-ai/
+conversational-ai/
 ├── actions/                    # Custom Rasa actions
 │   ├── __init__.py
 │   └── actions.py             
